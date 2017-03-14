@@ -5,6 +5,7 @@ let serveStatic = require('serve-static');
 let express = require('express');
 let app = express();
 
+app.set('port', (process.env.PORT || 5000));
 
 app.set('views', './views');
 app.set('view engine', 'pug');
@@ -60,6 +61,6 @@ app.get('/volunteer', (req,res) => {
     })
 })
 let server = http.createServer(app);
-server.listen(2199,'192.168.8.96', () => {
-    console.log(server.address())
-})
+server.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
