@@ -1,0 +1,247 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-media-query/iron-media-query.html">
+<link rel="import" href="../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/social-media-icons/social-media-icons.html">
+<dom-module id="c-footer">
+    <style>
+        :host{
+            display:inline-block;
+            width:100%;
+            background-color: #ef5350;
+            text-align: center;
+        }
+        :host h5{
+            font-size: 1.4rem;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+        :host .cta {
+            color:#fff;
+            margin-bottom: 10px;
+        }
+        :host .cta h6{
+            color: #fff;
+            font-size: 1.2rem;
+            margin-top: 0px;
+            margin-bottom: 15px;
+        }
+        .cta-btn{
+            display: inline-block;
+            background-color: #e57373;
+            text-decoration: none;
+            color: #fff;
+        }
+        .cta-btn paper-button{
+            margin: 0;
+            width: 100%
+        }
+        :host a.foot-link{
+            text-align: left;
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            font-size: 0.5rem;
+            padding: 0;
+            border-bottom: 2px solid #e57373;
+        }
+        :host a.foot-link paper-button{
+            display: inline-block;
+            padding: 1rem;
+            margin: 0;
+            --paper-button-ink-color:rgba(241, 241, 241, 0.5);
+        }
+        :host a.foot-link paper-button iron-icon{
+            --iron-icon-height:1.2rem;
+            --iron-icon-width:1.2rem;
+            top: -2px;
+        }
+        div.social-container{
+            color: #ef5350;
+            background-color: #f1f1f1;
+            padding: 15px;
+            -webkit-box-shadow: 0px 1px 2px 0px rgba(240,240,240,0.5);
+            -moz-box-shadow: 0px 1px 2px 0px rgba(240,240,240,0.5);
+            box-shadow: 0px 1px 2px 0px rgba(240,240,240,0.5);
+        }
+        div.social-container h6{
+            font-size: 1.1rem;
+            margin-top: 0px;
+            margin-bottom: 15px;
+        }
+        social-media-icons{
+            margin: 0 20px;
+        }
+        :host .creds{
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #fff;
+            margin-top: 0px;
+            padding: 10px;
+            margin-bottom: 0px;
+        }
+        :host .creds[developer]{
+            text-align: right;
+            padding: 20px;
+            font-size: 0.7rem;
+            display: inline-block;
+            color: #fff;
+            margin-top: 0px;
+            padding: 10px;
+            margin-bottom: 0px;
+        }
+        @media(min-width:426px) and (max-width:786px){
+            :host a.foot-link{
+                font-size: 0.9rem;
+            }
+            :host .creds{
+                font-size: 1.2rem;
+            }
+            :host .creds[developer]{
+                font-size: 0.8rem;
+            }
+            :host a.foot-link paper-button iron-icon{
+                --iron-icon-height:1.4rem;
+                --iron-icon-width:1.4rem;
+            }
+        }
+        @media(min-width:787px) and (max-width:1024px){
+            :host h5{
+                font-size: 1.8rem
+            }
+            :host .cta h6{
+                font-size: 1.5rem;
+            }
+            .cta-btn{
+                font-size: 1.2rem;
+            }
+            div.social-container h6{
+                font-size: 1.3rem;
+            }
+            :host a.foot-link{
+                font-size: 1.1rem;
+            }
+            :host .creds{
+                font-size: 1.4rem;
+            }
+            :host .creds[developer]{
+                font-size: 1rem;
+            }
+            :host a.foot-link paper-button iron-icon{
+                --iron-icon-height:1.6rem;
+                --iron-icon-width:1.6rem;
+            }
+        }
+        @media(min-width:1025px) and (max-width:1440px){
+            :host h5{
+                font-size: 2rem
+            }
+            :host .cta h6{
+                font-size: 1.6rem;
+            }
+            .cta-btn{
+                font-size: 1.4rem;
+            }
+            div.social-container h6{
+                font-size: 1.5rem;
+            }
+            :host a.foot-link{
+                font-size: 1.3rem;
+            }
+            :host .creds{
+                font-size: 1.5rem;
+            }
+            :host .creds[developer]{
+                font-size: 1rem;
+            }
+            :host a.foot-link paper-button iron-icon{
+                --iron-icon-height:1.8rem;
+                --iron-icon-width:1.8rem;
+            }
+        }
+        @media(min-width:1441px) and (max-width:2100px){
+            :host h5{
+                font-size: 2.5rem
+            }
+            :host .cta h6{
+                font-size: 1.9rem;
+            }
+            div.social-container h6{
+                font-size: 1.8rem;
+            }
+            .cta-btn{
+                font-size: 1.8rem;
+            }
+            :host a.foot-link{
+                font-size: 1.5rem;
+            }
+            :host .creds{
+                font-size: 1.8rem;
+            }
+            :host .creds[developer]{
+                font-size: 1.2rem;
+            }
+            :host a.foot-link paper-button iron-icon{
+                --iron-icon-height:1.8rem;
+                --iron-icon-width:1.8rem;
+            }
+        }
+        @media (min-width:2101px){
+            :host h5{
+                font-size: 3rem
+            }
+            :host .cta h6{
+                font-size: 2.5rem;
+            }
+            div.social-container h6{
+                font-size: 2.2rem;
+            }
+            .cta-btn{
+                font-size: 2.2rem;
+            }
+            :host a.foot-link{
+                font-size: 2rem;
+            }
+            :host .creds{
+                font-size: 2.2rem;
+            }
+            :host .creds[developer]{
+                font-size: 1.6rem;
+            }
+            :host a.foot-link paper-button iron-icon{
+                --iron-icon-height:2.2rem;
+                --iron-icon-width:2.2rem;
+                top: -7px;
+            }
+        }
+    </style>
+    <template>
+        <h5>Every Smile Is Worth Saving!</h5>
+        <div class="cta">
+            <h6>You can help us save several lives and improve countless of them</h6>
+            <a href="/donate" class="cta-btn"><paper-button raised ><iron-icon icon="favorite"></iron-icon> &nbsp;Donate</paper-button></a>
+            <a href="/volunteer" class="cta-btn"><paper-button raised ><iron-icon icon="grade"></iron-icon> &nbsp;Volunteer</paper-button></a>
+        </div>
+        <a href="/who-we-are" class="foot-link"><paper-button ><iron-icon icon="info"></iron-icon> About Us</paper-button></a>
+            <a href="/who-we-are#member" class="foot-link"><paper-button ><iron-icon icon="face" ></iron-icon> Our members</paper-button></a>
+            <a href="/event-gallery#upcoming-events" class="foot-link"><paper-button ><iron-icon icon="date-range" ></iron-icon> Event Calender</paper-button></a>
+            <!--<a href="#" class="foot-link"><paper-button ><iron-icon icon="mail" ></iron-icon> Contact Us</paper-button></a>-->
+            <div class="social-container">
+                <h6>Connect With Us</h6>
+                <social-media-icons icon="facebook" ></social-media-icons>
+                <social-media-icons icon="googleplus" ></social-media-icons>
+                <social-media-icons icon="twitter" ></social-media-icons>
+            </div>
+        <h6 class="creds">2017© Shifa Social Welfare Association®</h6>
+        <h6 class="creds" developer>Designed and Developed By: Syed Huzaifa Hassan</h6>
+    </template>
+    <script>
+        Polymer({
+            is:"c-footer",
+            ready: function(){
+                document.querySelector('#loader').value += 20;
+            }
+        })
+    </script>
+</dom-module>

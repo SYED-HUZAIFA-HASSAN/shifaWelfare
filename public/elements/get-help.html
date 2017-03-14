@@ -1,0 +1,98 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/iron-icons/communication-icons.html">
+<link rel="import" href="../bower_components/iron-icons/maps-icons.html">
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
+<link rel="import" href="../bower_components/paper-carousel/paper-carousel.html">
+<link rel="import" href="../bower_components/iron-media-query/iron-media-query.html">
+<link rel="import" href="../bower_components/google-map/google-map.html">
+<dom-module id="get-help">
+    <style>
+        .card{
+            -webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.5);
+            -moz-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.5);
+            box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+        .red-bg{
+            color: #fff;
+            background-color: #ef5350
+        }
+        :host div.intro-container {
+            color:#ef5350;
+            padding-left: 15px;
+            padding-bottom: 30px;
+            padding-right: 15px;
+        }
+        google-map{
+            height: 500px;
+        }
+        :host div.intro-container h1{
+            margin-top: 120px;
+            font-size: 2rem;
+        }
+        :host div.intro-container p{
+            font-size: 1.3rem
+        }
+        :host div.intro-container div.container-contact{
+            background-color: #ef5350;
+            color: #fff;
+            padding: 15px 10px;
+        }
+        :host div.intro-container div.container-contact a{
+            text-decoration: none;
+            font-size: 1rem;
+            color: #fff;
+            padding: 15px;
+        }   
+        :host div.intro-container div.container-contact a iron-icon{
+            --iron-icon-height: 1.1rem;
+            --iron-icon-width: 1.1rem;
+        }
+        div.card.red-bg h1{
+            margin-top: 0px;
+        }
+        @media(min-width:769px) and (max-width:1024px){
+            :host div.intro-container h1{
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+    <template>
+        <div class="intro-container">
+            <h1>Get Help From Us!</h1>
+            <p>Sole purpose of our organization is to help those in need of help! We believe that everyone has equal rights and must have equal access to services available in the society, which include quality housing, quality healthcare, quality food and so on so forth!</p>
+            <div class="card red-bg">
+                <h1>How Do we Help?</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at commodo justo. Nunc interdum scelerisque efficitur. Aliquam feugiat lacinia elit nec egestas. Donec semper nibh felis, sed ornare dui dignissim sit amet. Nunc sed elit odio. Cras sit amet vulputate lorem. Pellentesque molestie eros id enim aliquet, in aliquam sapien mollis. Nullam ultrices tristique elementum. Suspendisse congue laoreet ligula, id placerat elit pharetra maximus. Pellentesque a metus sollicitudin, volutpat erat sed, viverra sem. In mollis rhoncus turpis sed porttitor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus quis lacus diam. Fusce rhoncus risus sit amet odio vestibulum, ac bibendum felis vulputate. Integer lobortis augue vitae est suscipit, eget cursus orci feugiat. Vivamus tincidunt arcu ac ante ultrices, in finibus augue consectetur.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at commodo justo. Nunc interdum scelerisque efficitur. Aliquam feugiat lacinia elit nec egestas. Donec semper nibh felis, sed ornare dui dignissim sit amet. Nunc sed elit odio. Cras sit amet vulputate lorem. Pellentesque molestie eros id enim aliquet, in aliquam sapien mollis. Nullam ultrices tristique elementum. Suspendisse congue laoreet ligula, id placerat elit pharetra maximus. Pellentesque a metus sollicitudin, volutpat erat sed, viverra sem. In mollis rhoncus turpis sed porttitor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus quis lacus diam. Fusce rhoncus risus sit amet odio vestibulum, ac bibendum felis vulputate. Integer lobortis augue vitae est suscipit, eget cursus orci feugiat. Vivamus tincidunt arcu ac ante ultrices, in finibus augue consectetur.</p>
+            </div>
+            <p>We provide help to the needy, to get help you can contact us at:</p>
+            <div class="container-contact">
+                <a href="tel: +923233227349"><iron-icon icon="communication:call"></iron-icon> +92-323-3227349</a>
+                <p>Or you can email us on:</p>
+                <a href="mailto:shifasocialwelfare@gmail.com"><iron-icon icon="mail"></iron-icon> shifasocialwelfare@gmail.com</a>
+            </div> 
+            <p>Or you can visit us at:</p>
+            <google-map latitude="24.9192851" longitude="67.1321125" zoom="12" fit-to-markers api-key="AIzaSyCf9RJ3GGsIH8Kqm1SiBauCKGBamVDTDm8">
+                <google-map-marker latitude="24.9192851" longitude="67.1321125" draggable="false"></google-map-marker>
+            </google-map>
+        </div>
+    </template>
+    <script>
+        Polymer({
+            is: "get-help",
+            ready: function(){
+                setTimeout(function(){
+                    var loader = document.querySelector('#loader');
+                    var c = 0;
+                    while(c<60){
+                        loader.value++ 
+                        c++
+                    }
+                },0)
+            }
+        })
+    </script>
+</dom-module>

@@ -18,26 +18,48 @@ app.get('/', (req, res) => {
         },
     })
 });
-app.get('/contact-us', (req,res) => {
-    res.render('contact-us',  {
+app.get('/who-we-are', (req,res) => {
+    res.render('who-we-are',  {
         head: {
-            cssPath: "css/contact-us.css", 
-            title: 'Steamin Mugs - Karachi'
+            title: 'Shifa Social Welfare Association | Every Smile Matters'
         }
         
     })
 })
 
-app.get('/About-Us', (req,res) => {
-    res.render('About-Us',  {
+app.get('/donate', (req,res) => {
+    res.render('s-donation',  {
         head: {
-            cssPath: "css/About-Us.css", 
-            title: 'Steamin Mugs - Karachi'
+            title: 'Shifa Social Welfare Association | Every Smile Matters'
+        }
+        
+    })
+})
+app.get('/event-gallery', (req,res) => {
+    res.render('event-gallery',  {
+        head: {
+            title: 'Shifa Social Welfare Association | Every Smile Matters'
+        }
+        
+    })
+})
+app.get('/get-help', (req,res) => {
+    res.render('get-help',  {
+        head: {
+            title: 'Shifa Social Welfare Association | Every Smile Matters'
+        }
+        
+    })
+})
+app.get('/volunteer', (req,res) => {
+    res.render('volunteer',  {
+        head: {
+            title: 'Shifa Social Welfare Association | Every Smile Matters'
         }
         
     })
 })
 let server = http.createServer(app);
-server.listen(2199, '192.168.1.4', () => {
-    console.log('connection established')
+server.listen(2199,'192.168.8.96', () => {
+    console.log(server.address())
 })

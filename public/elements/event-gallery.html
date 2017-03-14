@@ -1,0 +1,161 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-carousel/paper-carousel.html">
+<dom-module id="event-gallery">
+    <style is="custom-style">
+
+        :host h2{
+            color: #ef5350;
+            padding: 10px;
+            text-align: center;
+            display: block;
+        }
+        div.bg-red{
+            background-color: #ef5350;
+            color: #fff;
+        }
+        div.bg-red h3{
+            font-size: 1.3rem;
+            padding: 0 30px;
+        }
+        div.bg-red h4{
+            text-align: left;
+            font-size: 1.2rem;
+            padding: 0 30px;
+        }
+        div.bg-red p{
+            text-align: left;
+            font-size: 1rem;
+            padding: 0 30px;
+        }
+        paper-carousel{
+            z-index: 0;
+        }
+        @media(min-width:426px) and (max-width:768px){
+            :host h2{
+                font-size: 1.6rem;
+                padding: 0 30px;
+            }
+           div.bg-red h3{
+                font-size: 1.5rem;
+                padding: 0 30px;
+            }
+            div.bg-red h4{
+                font-size: 1.4rem;
+                padding: 0 30px;
+            } 
+            div.bg-red p{
+                font-size: 1.1rem;
+                padding: 0 30px;
+            }
+        }
+        @media(min-width:769px) and (max-width:1024px){
+            :host h2{
+                font-size: 1.8rem;
+                padding: 0 30px;
+            }
+           div.bg-red h3{
+                font-size: 1.5rem;
+                padding: 0 30px;
+            }
+            div.bg-red h4{
+                font-size: 1.4rem;
+                padding: 0 30px;
+            } 
+            div.bg-red p{
+                font-size: 1.1rem;
+                padding: 0 30px;
+            }
+        }
+        @media(min-width:1025px) and (max-width:1440px){
+            :host h2{
+                font-size: 1.8rem;
+                padding: 0 30px;
+            }
+            div.bg-red h3{
+                font-size: 1.5rem;
+                padding: 0 30px;
+            }
+            div.bg-red h4{
+                font-size: 1.4rem;
+                padding: 0 30px;
+            } 
+            div.bg-red p{
+                font-size: 1.1rem;
+                padding: 0 30px;
+            }
+        }
+        @media(min-width:1441px) and (max-width:2100px){
+            :host h2{
+                font-size: 2.5rem;
+                padding: 0 30px;
+            }
+            div.bg-red h3{
+                font-size: 1.8rem;
+                padding: 0 30px;
+            }
+            div.bg-red h4{
+                font-size: 1.7rem;
+                padding: 0 30px;
+            } 
+            div.bg-red p{
+                font-size: 1.5rem;
+                padding: 0 30px;
+            }
+        }
+        @media(min-width:2100px){
+            :host h2{
+                font-size: 4rem;
+                padding: 0 30px;
+            }
+            div.bg-red h3{
+                font-size: 2.4rem;
+                padding: 0 30px;
+            }
+            div.bg-red h4{
+                font-size: 2rem;
+                padding: 0 30px;
+            } 
+            div.bg-red p{
+                font-size: 1.8rem;
+                padding: 0 30px;
+            }
+        }
+    </style>
+    <template>
+        <h2>Our recent events</h2>
+        <paper-carousel items="1" controls="true" dots="true" dotText="false">
+            <div class="bg-red paper-carousel-demo" data-text="">
+                <h3>Medical Camp in #location</h3>
+                <h4>Date: <b>5 April 2017</b></h4>
+                <p>We recently organized a medical camp in an underprivileged area of Karachi. We provided free medical check up and free medicines for them as well. We strive are trying to provide medical facilities to those member of our community who can't afford it.</p>
+                <p>We are deeply shocked by the condition of the people specially children, 70% of them had severe mal-nutrition problems as well as other diseases. Biggest cause of the diseases was negligence and poverty which makes condition more severe. They dont have access proper health care, proper nutrition and proper sanitary set up</p>
+            </div>
+            <div class="bg-red paper-carousel-demo">
+                <h3>Medical Camp in #location</h3>
+                <h4>Date: <b>5 April 2017</b></h4>
+                <p>We recently organized a medical camp in an underprivileged area of Karachi. We provided free medical check up and free medicines for them as well. We strive are trying to provide medical facilities to those member of our community who can't afford it.</p>
+                <p>We are deeply shocked by the condition of the people specially children, 70% of them had severe mal-nutrition problems as well as other diseases. Biggest cause of the diseases was negligence and poverty which makes condition more severe. They dont have access proper health care, proper nutrition and proper sanitary set up</p>
+            </div>
+            <div class="bg-red paper-carousel-demo">
+                <h3>Medical Camp in #location</h3>
+                <h4>Date: <b>5 April 2017</b></h4>
+                <p>We recently organized a medical camp in an underprivileged area of Karachi. We provided free medical check up and free medicines for them as well. We strive are trying to provide medical facilities to those member of our community who can't afford it.</p>
+                <p>We are deeply shocked by the condition of the people specially children, 70% of them had severe mal-nutrition problems as well as other diseases. Biggest cause of the diseases was negligence and poverty which makes condition more severe. They dont have access proper health care, proper nutrition and proper sanitary set up</p>
+            </div>
+            <div class="bg-red paper-carousel-demo">
+                <h3>Medical Camp in #location</h3>
+                <h4>Date: <b>5 April 2017</b></h4>
+                <p>We recently organized a medical camp in an underprivileged area of Karachi. We provided free medical check up and free medicines for them as well. We strive are trying to provide medical facilities to those member of our community who can't afford it.</p>
+                <p>We are deeply shocked by the condition of the people specially children, 70% of them had severe mal-nutrition problems as well as other diseases. Biggest cause of the diseases was negligence and poverty which makes condition more severe. They dont have access proper health care, proper nutrition and proper sanitary set up</p>
+            </div>
+        </paper-carousel>
+    </template>
+    <script>
+        Polymer({
+            is: "event-gallery",
+            ready: function(){
+                document.querySelector('#loader').value += 20;
+            }
+        })
+    </script>
+</dom-module>

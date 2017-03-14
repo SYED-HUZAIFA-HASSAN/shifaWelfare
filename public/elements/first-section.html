@@ -1,0 +1,451 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-media-query/iron-media-query.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/iron-icon/iron-icon.html">
+<dom-module id="first-section">
+    <style>
+        .first-container{
+            margin-top: 64px;
+            background-color: #fff;
+            position: relative
+        }
+        img.background-fit{
+            width: 100%;
+            position: relative;
+            -khtml-user-select: none;
+    	    -o-user-select: none;
+    	    -moz-user-select: none;
+    	    -webkit-user-select: none;
+            user-select: none;
+        }
+        .first-container h2{
+            position: absolute;
+            padding: 10px;
+            font-size: 0.7rem;
+            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.88);
+            color: #b71c1c;
+            display: inline-block;
+            width: auto;
+            margin: 0.25% 0px;
+            left: 5%;
+        }
+        .first-container h2[first]{
+            top:10px;
+        }
+        .first-container h2[second]{
+            top:45px;
+        }
+        .first-container h2[last]{
+            top:80px;
+        }
+        .quick-links{
+            position: absolute;
+            top:100px;
+            padding: 15px 5%;
+        }
+        a.btn-red{
+		    text-decoration: none !important;
+		    display: inline-block;
+    	    background-color: #ef5350;
+		    border-radius: 3px;
+		    position: relative;
+		    color: white;
+            margin-right: 10px;
+	    }
+        a.btn-red paper-button{
+		    --paper-button-ink-color: #e57373;
+            font-size: 0.4rem;
+		    --paper-button: {
+			    font-size: 0.4rem
+		    }
+	    }
+        a.btn-red paper-button iron-icon{
+            --iron-icon-height:18px;
+            --iron-icon-width:18px;
+        }
+        div.first-container .secondary-text{
+            display: inline-block;
+            position: absolute;
+            left: 5%;
+            width: 50%;
+            max-width: 200px;
+            min-width: 150px;
+            color: #ef5350;
+            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.88);
+            padding: 10px;
+        }
+        @media(min-width:310px) and (max-width:375px){
+            .first-container h2{
+                font-size: 1.25rem;
+            }
+            .first-container h2[second]{
+                top:57px;
+            }
+            .first-container h2[last]{
+                top:104px;
+            }
+            .quick-links{
+                position: absolute;
+                top:140px;
+                padding: 15px 5%;
+            }
+            a.btn-red paper-button{
+		        --paper-button-ink-color: #e57373;
+                font-size: 0.9rem;
+		        --paper-button: {
+			        font-size: 0.9rem;
+		        }
+	        }
+        }
+        /*Stylesfor large mobiles*/
+        @media(min-width: 376px) and (max-width: 425px){
+            .first-container h2{
+                font-size: 1.6rem
+            }
+            .first-container h2[first]{
+                top: 10%;
+            }
+            .first-container h2[second]{
+                top: 30%;
+            }
+            .first-container h2[last]{
+                top:50%;
+            }
+            .quick-links{
+                top:70%;
+            }
+            a.btn-red paper-button{
+		        --paper-button-ink-color: #e57373;
+			    font-size: 0.8rem;
+	        }
+        }
+        /*styles for small tablets*/
+        @media(min-width: 426px) and (max-width: 499px){
+            .first-container h2{
+                font-size: 1.2rem
+            }
+            .first-container h2[first]{
+                top: 10px;
+            }
+            .first-container h2[second]{
+                top: 55px
+            }
+            .first-container h2[last]{
+                top: 100px
+            }
+            div.first-container .secondary-text{
+                top:135px;
+                font-size: 0.75rem;
+            }
+            .quick-links{
+                top:223px;
+            }
+            a.btn-red paper-button{
+			    font-size: 0.7rem;
+            }
+        }
+        /*styles for medium tablets*/
+        @media(min-width: 500px) and (max-width: 595px){
+            .first-container h2{
+                font-size: 1.25rem
+            }
+            .first-container h2[first]{
+                top: 10px;
+            }
+            .first-container h2[second]{
+                top: 57px
+            }
+            .first-container h2[last]{
+                top: 104px
+            }
+            div.first-container .secondary-text{
+                top:137px;
+                font-size: 0.92rem;
+            }
+            .quick-links{
+                top:260px;
+            }
+            a.btn-red paper-button{
+			    font-size: 1rem
+            }
+            a.btn-red paper-button iron-icon{
+                --iron-icon-height:20px;
+                --iron-icon-width:20px;
+            }
+        }
+        /*styles for large tablets*/
+        @media(min-width: 596px) and (max-width: 768px){
+            .first-container h2{
+                font-size: 2rem
+            }
+            .first-container h2[first]{
+                top: 10px;
+            }
+            .first-container h2[second]{
+                top: 75px
+            }
+            .first-container h2[last]{
+                top: 140px
+            }
+            div.first-container .secondary-text{
+                top:190px;
+                max-width: 350px;
+                font-size: 1.1rem;
+            }
+            .quick-links{
+                top:320px;
+            }
+            a.btn-red paper-button{
+			    font-size: 1rem
+            }
+            a.btn-red paper-button iron-icon{
+                --iron-icon-height:20px;
+                --iron-icon-width:20px;
+            }
+        }
+        /*Small Laptop Style*/
+        @media(min-width: 769px) and (max-width: 936px){
+            .first-container h2{
+                font-size: 3rem
+            }
+            .first-container h2[first]{
+                top: 50px;
+            }
+            .first-container h2[second]{
+                top: 140px;
+            }
+            .first-container h2[last]{
+                top: 230px
+            }
+            div.first-container .secondary-text{
+                top:300px;
+                max-width: 450px;
+                font-size: 1.25rem;
+            }
+            .quick-links{
+                top:425px;
+            }
+            a.btn-red paper-button{
+			    font-size: 1rem
+		        
+            }
+            a.btn-red paper-button iron-icon{
+                --iron-icon-height:20px;
+                --iron-icon-width:20px;
+            }
+        }
+        @media(min-width: 937px) and (max-width: 1024px){
+            img.background-fit{
+                left: 15%;
+                max-width: 85%;
+            }
+            .first-container h2{
+                font-size: 3.5rem
+            }
+            .first-container h2[first]{
+                top: 50px;
+            }
+            .first-container h2[second]{
+                top: 145px;
+            }
+            .first-container h2[last]{
+                top: 240px
+            }
+            div.first-container .secondary-text{
+                top:310px;
+                max-width: 450px;
+                font-size: 1.5rem;
+            }
+            .quick-links{
+                top:440px;
+            }
+            a.btn-red paper-button{
+                font-size: 1rem;
+                --paper-button: {
+			        font-size: 1rem
+		        }
+            }
+            a.btn-red paper-button iron-icon{
+                --iron-icon-height:20px;
+                --iron-icon-width:20px;
+            }
+        }
+        @media(min-width: 1025px) and (max-width: 1440px){
+            img.background-fit{
+                left: 15%;
+                max-width: 85%;
+            }
+            .first-container{
+                max-height:600px;
+                overflow:hidden;
+            }
+            .first-container h2{
+                font-size: 4.5rem
+            }
+            .first-container h2[first]{
+                top: 50px;
+            }
+            .first-container h2[second]{
+                top: 160px;
+            }
+            .first-container h2[last]{
+                top: 270px
+            }
+            div.first-container .secondary-text{
+                top:365px;
+                max-width: 450px;
+                font-size: 1.45rem;
+            }
+            .quick-links{
+                top:510px;
+            }
+            a.btn-red paper-button{
+                font-size: 1rem;
+                --paper-button: {
+			        font-size: 1rem
+		        }
+            }
+            a.btn-red paper-button iron-icon{
+                --iron-icon-height:20px;
+                --iron-icon-width:20px;
+            }
+        }
+        @media(min-width: 1441px) and (max-width:2100px){
+            img.background-fit{
+                left: 20%;
+                width: 80%;
+            }
+            .first-container{
+                margin-top: 100px;
+                max-height:760px;
+                overflow:hidden;
+            }
+            .first-container h2{
+                font-size: 5rem;
+                left:10%;
+            }
+            .first-container h2[first]{
+                top: 70px;
+            }
+            .first-container h2[second]{
+                top: 190px;
+            }
+            .first-container h2[last]{
+                top: 310px
+            }
+            div.first-container .secondary-text{
+                top:400px;
+                width: 40%;
+                max-width: 500px;
+                left: 10%;
+                font-size: 2rem;
+                padding: 15px;
+            }
+            .quick-links{
+                top:650px;
+                left:5%;
+            }
+            a.btn-red paper-button{
+                font-size: 1.4rem;
+                --paper-button: {
+			        font-size: 1.4rem
+		        }
+            }
+            a.btn-red paper-button iron-icon{
+                --iron-icon-height:26px;
+                --iron-icon-width:26px;
+            }
+        }
+        @media (min-width:2101px){
+            img.background-fit{
+                left: 20%;
+                width: 80%;
+                bottom: 110px;
+            }
+            .first-container{
+                margin-top: 100px;
+                max-height:760px;
+                overflow:hidden;
+            }
+            .first-container h2{
+                font-size: 5rem;
+                left:10%;
+            }
+            .first-container h2[first]{
+                top: 70px;
+            }
+            .first-container h2[second]{
+                top: 190px;
+            }
+            .first-container h2[last]{
+                top: 310px
+            }
+            div.first-container .secondary-text{
+                top:400px;
+                width: 40%;
+                max-width: 500px;
+                left: 10%;
+                font-size: 2rem;
+                padding: 15px;
+            }
+            .quick-links{
+                top:650px;
+                left:5%;
+            }
+            a.btn-red paper-button{
+                font-size: 1.4rem;
+                --paper-button: {
+			        font-size: 1.4rem
+		        }
+            }
+            a.btn-red paper-button iron-icon{
+                --iron-icon-height:28px;
+                --iron-icon-width:28px;
+            }
+        }
+    </style>
+    <template>
+        <iron-media-query query="min-width: 426px" query-matches="{{md}}"></iron-media-query>
+        <div class="first-container">
+            <img draggable="false" class="background-fit" src="../../images/bg-320px.jpg" srcset="
+			../../images/bg-425px.jpg 0.5x, 
+			../../images/bg-768px.jpg 0.75x,
+			../../images/bg-1134px.jpg 1x"
+			alt="Shifa Social Welfare Association"
+		    >
+            <h2 first>Every smile</h2>
+            <br>
+            <h2 second>is worth</h2>
+            <br>
+            <h2 last>saving!</h2>
+            <template is="dom-if" if={{md}}>
+                <p class="secondary-text">
+                    Your help can make a difference for her and many others like her! You can help them either by donating, volunteering or simply just by spreading the word.
+                </p>
+            </template>
+            <div class="quick-links">
+				<a class="btn-red" left href="#" tabindex="-1">
+					<paper-button>
+						<iron-icon class="btn-icon" icon="grade"></iron-icon>
+						&nbsp;Volunteer
+					</paper-button>
+					<a class="btn-red" href="#">
+						<paper-button>
+							<iron-icon class="btn-icon" icon="favorite"></iron-icon>
+							&nbsp;Donate
+						</paper-button>
+					</a>
+		    </div>
+        </div>
+    </template>
+    <script>
+        Polymer({
+            is: "first-section",
+            ready: function(){
+                document.querySelector('#loader').value += 10
+            }
+        })
+    </script>
+</dom-module>

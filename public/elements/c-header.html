@@ -1,0 +1,341 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html">
+<link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="../bower_components/iron-icons/image-icons.html">
+<link rel="import" href="../bower_components/iron-icons/image-icons.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../bower_components/iron-media-query/iron-media-query.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-progress/paper-progress.html">
+<link rel="import" href="../bower_components/social-media-icons/social-media-icons.html">
+<dom-module id="c-header">
+	<style is="custom-style">
+  	app-toolbar {
+		color: #b71c1c;
+		background-color: #fff
+	}
+	paper-icon-button {
+	  	--paper-icon-button-ink-color: white;
+  	}
+	paper-icon-button[icon="menu"] {
+  		position: fixed;
+		right: 10px;
+		top: 10px;
+  	}  
+	app-toolbar a.logo-container{
+		display: inline-block;
+  		width: 35%;
+	}
+	img.logo{
+		display: inline-block;
+  		width: 100%;
+		user-select: none;
+		-khtml-user-select: none;
+    	-o-user-select: none;
+    	-moz-user-select: none;
+    	-webkit-user-select: none;
+	}
+  	paper-progress {
+		height: 10px;
+  		width: 100%;
+  		--paper-progress-active-color: #b71c1c;
+  		--paper-progress-container-color: transparent;
+		position: absolute;
+		left: 0px;
+		top: 64px;
+		--paper-progress-transition-duration: 1s;
+  	}
+  	app-header {
+  		color: #fff;
+		z-index: 20;
+		@apply(--layout-fixed-top);
+  	}
+  	app-drawer#drawer {
+		width: 100%;
+		text-align: left;
+		z-index: 99999;
+  		--app-drawer-scrim-background: rgba(229, 57, 53,0.3);
+  		--app-drawer-content-container: {
+  			background-color: #f5f5f5;
+			overflow-y: scroll;
+			overflow-x: hidden;
+			width:100%;
+  		};
+		font-size: 1rem;
+  	}
+	[menu-close]{
+		position: fixed;
+    	right: 0px;
+		--iron-icon-height:36px;
+		--iron-icon-width:36px;
+		color:#ef5350
+	}
+	.mediumIcon{
+		color:#ef5350;
+		--iron-icon-height:36px;
+		--iron-icon-width:36px;
+		display: inline-block;
+		position: relative;
+		top: -0.3em;
+	}
+	.contain-center{
+		margin:15px;
+		text-align: center;
+	}
+	a.btn-red{
+		text-decoration: none !important;
+		display: inline-block;
+    	background-color: #ef5350;
+		border-radius: 3px;
+		position: relative;
+		color: white;
+		font-size: 1rem
+	}
+	.contain-center>a.btn-red[left]{
+		right: 2%;
+	}
+	.contain-center a.btn-red[right]{
+		left: 2%;
+	}
+	a.btn-red paper-button{
+		font-size: 1rem;
+		--paper-button-ink-color: #ff8a80;
+		--paper-button: {
+			font-size: 1rem
+		}
+	}
+	a.navLink{
+		font-weight: 400;
+		display: block;
+		text-decoration: none;
+		padding:17px;
+		border-bottom: 1px solid #ff8a80;
+		border-top: none;
+		border-right: none;
+		border-left: none;
+		color:#ef5350;
+		transition-duration: 0.6s;
+	}
+	a.navLink:hover{
+		background-color: #eeeeee;
+		transition-duration: 0.6s;
+	}
+	a.navLink span{
+		display: inline-block;
+		max-width: 60%;
+	}
+	div.contain-center.social{
+		margin-top: 10%;
+	}
+	div.contain-center.social a.btn-social{
+		padding: 10px;
+	}
+	h2.center{
+		color: #ef5350;
+		text-align: center;
+	}
+	@media(min-width: 426px) and (max-width: 768px){
+		app-header a.logo-container{
+			width: 20%;
+		}
+		a.btn-red{
+			font-size: 1rem
+		}
+		.contain-center>a.btn-red[left]{
+			right: 1%;
+		}
+		.contain-center a.btn-red[right]{
+			left: 1%;
+		}
+		a.btn-red paper-button{
+			font-size: 1rem;
+			--paper-button: {
+				font-size: 1rem;
+			}
+		}
+	}
+	@media(min-width: 769px) and (max-width: 1440px){
+		app-header a.logo-container{
+			width: 10%;
+		}
+		app-drawer#drawer {
+			width: 30%;
+  		}
+		paper-icon-button[icon="menu"]{
+			padding: 5px;
+		}
+		div.quick-links{
+			text-align: right;
+    		right: 80px;
+			top: 15px;
+    		position: fixed;
+		}
+		a.btn-red{
+			font-size: 1rem;
+		}
+		a.btn-red paper-button{
+			font-size: 1rem;
+			--paper-button: {
+				font-size: 1rem;
+				padding: 0.30em
+			}
+		}
+		a.btn-red[left]{
+			right: 4%;
+		}
+		a.btn-red[right]{
+			left: 4%;
+		}
+	}
+	@media(min-width: 1441px){
+		app-header a.logo-container{
+			width: 10%;
+		}
+		app-drawer#drawer {
+			width: 20%;
+  		}
+		paper-icon-button[icon="menu"]{
+			top: 30px;
+			padding: 0px;
+		}
+		div.quick-links{
+			text-align: right;
+    		right: 60px;
+    		position: fixed;
+		}
+		paper-progress{
+			top: 100px
+		}
+		app-toolbar{
+			height:100px;
+		}
+		.quick-links a.btn-red{
+			margin-right: 15px;
+		}
+		a.btn-red{
+			text-decoration: none !important;
+			display: inline-block;
+    		background-color: #ef5350;
+			border-radius: 3px;
+			position: relative;
+			color: white;
+			font-size: 1.1rem
+		}
+		.contain-center>a.btn-red[left]{
+			right: 2%;
+		}
+		.contain-center a.btn-red[right]{
+			left: 2%;
+		}
+		a.btn-red paper-button{
+			font-size: 1.1rem;
+			--paper-button-ink-color: #ff8a80;
+			--paper-button: {
+				font-size: 1.1rem;
+			}
+		}
+	}
+	</style>
+	<template id="c-header">
+		<iron-media-query query="min-width: 769px" query-matches="{{lg}}"></iron-media-query>
+		<app-header reveals>
+		  <app-toolbar>
+			  <a href="/" class="logo-container">			  
+			  	<img draggable="false"  class="logo" src="../../images/logo-0.75x.png" srcset="
+			  	../../images/logo-0.75x.png 0.75x, 
+			  	../../images/logo.png 1x,
+			  	../../images/logo-1.5x.png 1.5x,
+			  	../../images/logo-2x.png 2x"
+			  	alt="Shifa Social Welfare Association">
+			  </a>
+
+			<template is="dom-if" if="{{lg}}">
+				<div class="quick-links">
+						<a class="btn-red" href="/donate">
+							<paper-button>
+								<iron-icon class="btn-icon" icon="favorite"></iron-icon>
+								&nbsp;Donate
+							</paper-button>
+						</a>
+				</div>
+			</template>
+		    <paper-icon-button icon="menu" onclick="drawer.toggle()"></paper-icon-button>
+			<paper-progress id="loader" value="20" min="10" max="100"></paper-progress>
+		  </app-toolbar>
+		</app-header>
+		<app-drawer id="drawer" align="end" persistent responsiveWidth >
+			<paper-icon-button menu-close icon="highlight-off" onclick="drawer.toggle()"></paper-icon-button>
+			<br>
+			<br>
+			<template is="dom-if" if="{{!lg}}">
+		    	<a class="navLink" href="/donate">
+					<iron-icon class="mediumIcon" icon="favorite"></iron-icon>
+					<span>Donate To Our Cause</span>
+				</a>
+			</template>
+			<a class="navLink" href="/who-we-are">
+				<iron-icon class="mediumIcon" icon="info"></iron-icon>
+				<span>Who We are?</span>
+			</a>
+		    <a class="navLink" href="/event-gallery">
+				<iron-icon class="mediumIcon" icon="image:photo-library"></iron-icon>
+				<span>Events Gallery</span>
+			</a>
+			<a class="navLink" href="/get-help">
+				<iron-icon class="mediumIcon" icon="add-box"></iron-icon>
+				<span>Get Help</span>
+			</a>
+			<a class="navLink" href="/volunteer">
+				<iron-icon class="mediumIcon" icon="grade"></iron-icon>
+				<span>Volunteer</span>
+			</a>
+			<!--<a class="navLink" href="#">
+				<iron-icon class="mediumIcon" icon="mail"></iron-icon>
+				<span>Contact Us</span>
+			</a>-->
+			<h2 class="center">Connect With Us!</h2>
+			<div class="contain-center social">
+				<a class="btn-social" left href="#" tabindex="-1">
+					<social-media-icons icon="facebook"></social-media-icons>
+				</a>
+				<a class="btn-social" href="#" tabindex="-1">
+					<social-media-icons icon="googleplus"></social-media-icons>
+				</a>
+				<a class="btn-social" right href="#" tabindex="-1">
+					<social-media-icons icon="twitter"></social-media-icons>
+				</a>
+			</div>
+		</app-drawer>
+	</template>
+	<script>
+  		Polymer({
+    		is: 'c-header',
+			properties: {
+				lg: Boolean
+      		},
+			ready: function(){
+			document.querySelector('app-drawer').addEventListener('app-drawer-transitioned', function(){
+				if(document.querySelector('app-drawer').hasAttribute('opened')){
+					if(document.querySelector('#content')){
+						if(window.outerWidth < 769){
+							document.querySelector('body').style.overflow= 'hidden';
+							console.log('hidden');
+						}else{
+							document.querySelector('body').style.overflow= 'hidden';
+						}
+					}
+
+				}else{
+					if(document.querySelector('#content')){
+						document.querySelector('body').style.overflow= 'scroll';
+					}
+				}
+			})
+		}
+  		});
+		
+  </script>
+</dom-module>

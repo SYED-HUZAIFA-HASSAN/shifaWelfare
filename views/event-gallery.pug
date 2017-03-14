@@ -10,19 +10,12 @@ html
     title #{head.title}
     script(src="bower_components/webcomponentsjs/webcomponents-lite.min.js")
     link(rel="stylesheet", href="bower_components/normalize-css/normalize.min.css")
-    link(href="elements/c-header.html", rel="import")
-    link(href="elements/first-section.html", rel="import")
-    link(href="elements/what-we-are.html", rel="import")
-    link(href="elements/event-gallery.html", rel="import")
-    link(href="elements/visit-us.html", rel="import")
     link(rel="stylesheet", href="css/font.css")
-    link(href="elements/visit-us.html", rel="import")
+    link(href="elements/c-header.html", rel="import")
+    link(href="elements/events.html", rel="import")
     link(href="elements/c-footer.html", rel="import")
   body
     c-header
     main(id="content")
-      first-section
-      what-we-are
       event-gallery
-      visit-us
     c-footer
