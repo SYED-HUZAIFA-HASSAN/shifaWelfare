@@ -1,0 +1,275 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/iron-media-query/iron-media-query.html">
+<link rel="import" href="../bower_components/iron-icon/iron-icon.html">
+<dom-module is="what-we-are">
+    <style>
+        :host{
+            margin-top: -9.5%;
+            display: inline-block;
+            color: #fff;
+            background-color: #ef5350;
+            text-align: center;
+            width: 100%;
+            position: relative;
+        }
+        :host h3{
+            padding: 10px;
+            text-align: center;
+            font-size: 1.2rem
+        }
+        :host div p{
+            padding: 0px 15px;
+            font-size: 1rem;
+            width: 90%;
+            margin-top: 0px;
+            text-align: left;
+        }
+        a{
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        a paper-button.red-btn{
+            background-color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            display: inline-block;
+            color: #ef5350;
+            text-align: center;
+            border-radius: 3px;
+            transition: 0.4s;
+            width: 95%;
+        }
+        a paper-button.red-btn:hover{
+            text-decoration: underline;
+            transition: 0.4s
+        }
+        a paper-button.red-btn iron-icon{
+            --iron-icon-height:1.1rem;
+            --iron-icon-width:1.1rem;
+            margin-top: -1%;
+        }
+        @media(min-width:310px) and (max-width:376px){
+            :host{
+                margin-top: -7%;
+            }
+            :host div p{
+                font-size: 1.1rem;
+            }
+        }
+
+        @media(min-width:377px) and (max-width:425px){
+            :host{
+                margin-top: -5.5%;
+            }
+            :host div p{
+                font-size: 1.1rem;
+            }
+        }
+        /**/
+        @media(min-width:426px) and (max-width:499px){
+            :host{
+                margin-top: -5%;
+            }
+            :host h3{
+                font-size: 1.5rem;
+            }
+
+            :host div p{
+                font-size: 1.2rem;
+            }
+        }
+        @media(min-width:500px) and (max-width:595px){
+            :host{
+                margin-top: -4.6%;
+            }
+            :host h3{
+                font-size: 1.5rem;
+            }
+
+            :host div p{
+                font-size: 1.2rem;
+            }
+        }
+        @media(min-width:596px) and (max-width:768px){
+            :host{
+                margin-top: -4%;
+            }
+            :host h3{
+                font-size: 1.5rem;
+            }
+
+            :host div p{
+                font-size: 1.3rem;
+            }
+        }
+        @media(min-width:769px) and (max-width:1024px){
+            :host{
+                margin-top: -4%;
+                text-align: right;
+                background-image: url(../images/quotationMarkOpen.png),url(../images/quotationMarkClose.png);
+                background-repeat: no-repeat;
+                background-position-y: 10%,100%;
+                background-position-x: 2%,100%;
+                background-size: 8%;
+            }
+            :host h3{
+                font-size: 2.5rem;
+                display: inline-block;
+                width: 50%;
+                padding: 30px;
+                position: absolute;
+                left: 0px;
+                top: 10%;
+            }
+            :host div{
+                padding: 30px;
+                display: inline-block;
+                width: 40%;
+            }
+            :host div p{
+                text-align: left;
+                font-size: 1.5rem;
+            }
+            a{
+                width: 45%;
+                position: absolute;
+                left: 5%;
+                top: 50%;
+                font-size: 1.5rem;
+            }
+        }
+        @media(min-width:1025px) and (max-width:1440px){
+            :host{
+                margin-top: -1.1%;
+                text-align: right;
+                background-image: url(../images/quotationMarkOpen.png),url(../images/quotationMarkClose.png);
+                background-repeat: no-repeat;
+                background-position-y: 10%,100%;
+                background-position-x: 2%,100%;
+                background-size: 8%;
+            }
+            :host h3{
+                font-size: 2.5rem;
+                display: inline-block;
+                width: 45%;
+                padding: 30px;
+                position: absolute;
+                left: 0px;
+                top: 20%;
+            }
+            :host div{
+                padding: 30px;
+                display: inline-block;
+                width: 45%;
+            }
+            :host div p{
+                text-align: left;
+                font-size: 1.5rem;
+            }
+            a{
+                width: 45%;
+                position: absolute;
+                left: 5%;
+                top: 70%;
+                font-size: 1.5rem;
+            }
+        }
+        @media(min-width: 1441px) and (max-width:2100px){
+            :host{
+                margin-top: -1.1%;
+                text-align: right;
+                background-image: url(../images/quotationMarkOpen.png),url(../images/quotationMarkClose.png);
+                background-repeat: no-repeat;
+                background-position-y: 10%,100%;
+                background-position-x: 2%,100%;
+                background-size: 6%;
+            }
+            :host h3{
+                font-size: 4rem;
+                display: inline-block;
+                width: 45%;
+                padding: 30px;
+                position: absolute;
+                left: 0px;
+                top: 20%;
+            }
+            :host div{
+                padding: 30px;
+                display: inline-block;
+                width: 45%;
+            }
+            :host div p{
+                text-align: left;
+                font-size: 2rem;
+            }
+            a{
+                width: 45%;
+                position: absolute;
+                left: 5%;
+                top: 80%;
+                font-size: 2rem;
+            }
+        }
+        @media(min-width: 2100px){
+            :host{
+                margin-top: 0;
+                text-align: right;
+                background-image: url(../images/quotationMarkOpen.png),url(../images/quotationMarkClose.png);
+                background-repeat: no-repeat;
+                background-position-y: 7%,100%;
+                background-position-x: 2%,100%;
+                background-size: 5%;
+            }
+            :host h3{
+                font-size: 4rem;
+                display: inline-block;
+                width: 45%;
+                padding: 30px;
+                position: absolute;
+                left: 0px;
+                top: 10%;
+            }
+            :host div{
+                padding: 30px;
+                display: inline-block;
+                width: 45%;
+            }
+            :host div p{
+                text-align: left;
+                font-size: 2.2rem;
+            }
+            a{
+                width: 45%;
+                position: absolute;
+                left: 5%;
+                top: 78%;
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+    
+    <template>
+        <h3>We are highly active social Welfare organizations</h3>
+        <div>
+            <p>We are a <b><em>Non-profit organization </em></b> &nbsp;striving to help and improve standard of living and medical, sanitary and educational condition of under privlaged locals living in urban areas.</p>
+            <p>We are helping them get over financial hurdles, by providing healthcare, education and financial aids for other day to day needs and aids for marriage for underprivlaged families. Sole purpose of our organization is to spread humanity, help others overcome problem so that the can enjoy the rather abundant joy of life, from which they have been bereft</p>
+        </div>
+        <a href="/who-we-are" >
+            <paper-button class="red-btn" raised>Learn More About Us<iron-icon icon="chevron-right"></iron-icon></paper-button>
+            
+        </a>
+    </template>
+    <script>
+        Polymer({
+            is: "what-we-are",
+            ready: function(){
+                document.querySelector('#loader').value += 10;
+            }
+        })
+
+    </script>
+</dom-module>

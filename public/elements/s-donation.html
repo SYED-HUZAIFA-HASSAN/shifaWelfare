@@ -1,0 +1,28 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<dom-module id="s-donation">
+    <style>
+        :host h1{
+            margin: 120px 20px 60px 20px;
+            color: #ef5350;
+            text-align:center;
+        }
+    </style>
+    <template>
+        <h1> This area is under mantainance it wil be back on shortly </h1>
+    </template>
+    <script>
+        Polymer({
+            is:"s-donation",
+            ready: function(){
+                setTimeout(function(){
+                    var c = 0;
+                    var loader = document.querySelector('#loader');
+                    while(c<60){
+                        loader.value++ 
+                        c++
+                    }
+                },0)
+            }
+        })
+    </script>
+</dom-module>
